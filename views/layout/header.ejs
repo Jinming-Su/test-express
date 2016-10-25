@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Blog</title>
+  <link href="stylesheets/style.css"/>
+</head>
+<body>
+  <header>
+    <h1><%= title %></h1>
+  </header>
+
+  <nav>
+    <span><a title="主页" href="/">Home</a></span>
+      <% if(user) {%>
+        <span><a title="发表" href="/post">Post</a></span>
+        <span><a title="登出" href="/logout">Logout</a></span>
+      <% } else { %>
+        <span><a title="登录" href="/login">Login</a></span>
+        <span><a title="注册" href="/register">Register</a></span>
+      <% } %>
+  </nav>
+
+  <article>
+    <% if(success) { %>
+      <div><%= success %></div>
+    <% } %>
+    <% if(err) { %>
+      <div><%= err %></div>
+    <% } %>

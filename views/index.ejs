@@ -1,0 +1,12 @@
+<%- include layout/header %>
+
+<% articles.forEach(function (article, index) { %>
+   <p><h2><a href="#"><%= article.title %></a></h2></p>
+   <p>
+      auther: <a href="#"><%= article.username %></a><br>
+      date: <%= article.time.minute %>
+   </p>
+   <p><%- article.content %></p>
+<% })%>
+
+<%- include layout/footer %>
